@@ -36,6 +36,15 @@
         output.push(ret);
       }
     }
+    else {
+        output = {};
+
+        for(var key in obj) {
+            if(Object.prototype.hasOwnProperty.call(obj, key)) {
+                output[convert(key, options)] = obj[key];
+            }
+        }
+    }
 
     return output;
   };
